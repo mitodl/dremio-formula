@@ -1,0 +1,7 @@
+# -*- mode: yaml -*-
+dremio:
+  overrides:
+    pkg: dremio
+    conf_file: /usr/local/etc/dremio/dremio.conf
+  config:
+    key: othervalue

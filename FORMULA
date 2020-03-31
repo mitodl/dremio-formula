@@ -1,0 +1,9 @@
+name: dremio
+os: RedHat, CentOS, Ubuntu, Debian
+os_family: RedHat, Debian
+version: 202003
+release: 1
+summary: SaltStack formula for building a Dremio server
+description: SaltStack formula for building a Dremio server
+top_level_dir: dremio
+recommended: 

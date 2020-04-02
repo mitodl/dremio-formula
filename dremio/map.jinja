@@ -1,14 +1,27 @@
 {% set dremio = salt.grains.filter_by({
     'default': {
-        'pkgs': ['dremio'],
+        'pkgs': [''],
         'service': 'dremio',
-        'conf_file': '/etc/dremio/dremio.conf',
+        'conf_file': '/opt/dremio/conf/dremio.conf',
         'config': {
-            'key': 'value',
+            'paths': {
+                'local': '/var/opt/dremio/data'
+            },
+            'services': {
+                'coordinator.enabled': True,
+                'coordinator.master.enabled': True,
+                'executor.enabled': True
+            }
         },
+        'core_site_config': {},
+        'user': 'dremio',
+        'group': 'dremio',
+        'source': 'https://download.dremio.com/community-server/dremio-community-LATEST.tar.gz'
     },
     'Debian': {
+        'pkgs': ['default-jdk-headless']
     },
     'RedHat': {
+        'pkgs': ['java-latest-openjdk-headless']
     },
 }, grain='os_family', merge=salt.pillar.get('dremio'), base='default') %}

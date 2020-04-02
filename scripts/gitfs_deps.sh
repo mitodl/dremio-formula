@@ -21,4 +21,4 @@ else
     rm get_pip.py
 fi
 
-sudo pip3 install gitpython testinfra
+sudo pip3 install gitpython testinfra pyhocon

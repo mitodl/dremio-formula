@@ -1,7 +1,12 @@
 # -*- mode: yaml -*-
 dremio:
-  overrides:
-    pkg: dremio
-    conf_file: /usr/local/etc/dremio/dremio.conf
   config:
-    key: othervalue
+    services:
+      coordinator.enabled: True
+  core_site_config:
+    configuration:
+      property:
+        - name: fs.dremioS3.impl
+          value: com.dremio.plugins.s3.store.S3FileSystem
+        - name: fs.s3a.aws.credentials.provider
+          value: com.amazonaws.auth.InstanceProfileCredentialsProvider

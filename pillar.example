@@ -2,7 +2,9 @@
 dremio:
   config:
     services:
-      coordinator.enabled: True
+      coordinator.enabled: True,
+      coordinator.master.enabled: True,
+      executor.enabled: True
   core_site_config:
     configuration:
       property:
